@@ -1,7 +1,7 @@
 import string, math
 def distancesFromCoords():
-    f = open('kroA100.tsp')
-    data = [line.replace("\n","").split(" ")[1:] for line in f.readlines()[6:106]]
+    f = open('berlin52.tsp')
+    data = [line.replace("\n","").split(" ")[1:] for line in f.readlines()[6:58]]
     coords =  list(map(lambda x: [float(x[0]),float(x[1])], data))
     distances = []
     for i in range(len(coords)):
