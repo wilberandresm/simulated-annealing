@@ -2,6 +2,8 @@ import template as t
 import numpy as np
 from math import exp
 import random as r
+import networkx as nx
+import matplotlib.pyplot as plt
 
 def ObjetiveFunction(pos,matriz):
     z = 0
@@ -28,7 +30,7 @@ if __name__ == "__main__":
         if(i!=pos):
             x.append(i)
     x.append(pos)
-    T = 4 #se asigna un valor T aleatorio
+    T = 1 #se asigna un valor T aleatorio
     alpha = 0.98 #alpha cualquiera 
     while(T>0.1): #cuando sea menor 0.1 significa que el algoritmo finalizó
         z = ObjetiveFunction(x,coor) #distancia
@@ -49,3 +51,8 @@ if __name__ == "__main__":
 
     print("Route:",x)
     print("Final distance:",new_z)
+
+    graph=nx.complete_graph([i for i in range(1,len(x)+1)])
+    nx.draw(graph,with_labels=True,font_weight='bold' )
+    plt.show()
+    plt.savefig('grafica.jpg')
