@@ -32,7 +32,9 @@ if __name__ == "__main__":
     x.append(pos)
     T = 1 #se asigna un valor T aleatorio
     alpha = 0.98 #alpha cualquiera 
+    ite=0
     while(T>0.1): #cuando sea menor 0.1 significa que el algoritmo finalizó
+        i+=1
         z = ObjetiveFunction(x,coor) #distancia
         new_x = DisruptMatrix(x[:]) #nueva posicion
         new_z = ObjetiveFunction(new_x,coor)
@@ -46,7 +48,7 @@ if __name__ == "__main__":
             if(n < p):
                 x = new_x
                 T *= alpha
-        print(T)
+        print("La temperatura es: ", T, "iteracion: ", ite)
         print("\n")
 
     print("Route:",x)
