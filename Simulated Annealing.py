@@ -30,7 +30,7 @@ if __name__ == "__main__":
         if(i!=pos):
             x.append(i)
     x.append(pos)
-    T = 1 #se asigna un valor T aleatorio
+    T = 1000 #se asigna un valor T aleatorio
     alpha = 0.98 #alpha cualquiera 
     ite=0
     while(T>0.1): #cuando sea menor 0.1 significa que el algoritmo finalizó
@@ -54,7 +54,4 @@ if __name__ == "__main__":
     print("Route:",x)
     print("Final distance:",new_z)
 
-    graph=nx.complete_graph([i for i in range(1,len(x)+1)])
-    nx.draw(graph,with_labels=True,font_weight='bold' )
-    plt.show()
-    plt.savefig('grafica.jpg')
+    
